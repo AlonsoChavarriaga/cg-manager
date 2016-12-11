@@ -1,7 +1,10 @@
 <div class="container">
   <h1 class="title">View Players</h1>
 
-  <a class="button is-primary" ng-click="playerToggle()">View Today's Players</a>
+  <a class="button is-primary" ng-click="playerToggle()">
+    <span ng-if="playerFilter">View All Players</span>
+    <span ng-if="!playerFilter">View Today's Players</span>
+  </a>
 
   <p class="control has-icon" style="margin-top: 15px">
     <input class="input small-input" placeholder="Search by Name" ng-model="search.name">

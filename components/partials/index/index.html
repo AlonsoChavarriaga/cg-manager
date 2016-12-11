@@ -1,0 +1,59 @@
+<div id="home" class="container" ng-controller="HomeController as home">
+  <h1 class="title">Add Player</h1>
+
+
+  <form id="form-add-player">
+    <label class="label">Player Name</label>
+    <p class="control has-icon">
+      <angucomplete-alt input-class="input" pause="200"
+                        selected-object="home.player" minlength="1"
+                        local-data="home.players" search-fields="name"
+                        title-field="name" input-changed="newPlayer">
+      </angucomplete-alt>
+      <i class="fa fa-user-plus"></i>
+    </p>
+
+    <label class="label">Gamer Tag</label>
+    <p class="control has-icon">
+      <input type="text" class="input" ng-model="home.player.originalObject.tag">
+      <i class="fa fa-hashtag"></i>
+    </p>
+
+    <label class="label">Games</label>
+    <p class="control has-icon">
+      <angucomplete-alt input-class="input" pause="200"
+                        selected-object="home.selectGame" minlength="1"
+                        local-data="home.games" search-fields="title"
+                        title-field="title" clear-selected="true">
+      </angucomplete-alt>
+      <i class="fa fa-gamepad"></i>
+    </p>
+
+    <div class="game-tag-container">
+      <ul class="game-tags">
+        <li class="button is-primary game-tag" ng-repeat="game in home.selectedGames">
+          {{ game.title }}
+          <span class="icon is-small" ng-click="home.deselectGame(game)">
+            <i class="fa fa-times"></i>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    {{ newPlayerName }}
+    <a class="button is-primary is-fullwidth"
+       ng-click="home.addPlayerVisit(home.player, home.selectedGames)">
+      Save Player Entry
+    </a>
+  </form><br>
+
+  <article ng-if="success" class="message is-success">
+    <div class="message-header">
+      Player Saved
+    </div>
+    <div class="message-body">
+      {{ successMsg }}
+    </div>
+  </article>
+
+</div>

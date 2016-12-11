@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+.game-tag {
+  margin: 5px;
+}
+.small-input {
+  max-width: 414px !important;
+}
+.game-tag-container {
+  margin-top: 20px;
+}
+.view-profile {
+  display: inline-block;
+}
+.back-arrow {
+  display: block;
+}
+.player-name {
+  font-style: italic;
+  display: block;
+}
+.player-details {
+  font-style: italic;
+  display: block;
+  margin-bottom: 15px;
+}
+.player-tag-style {
+  display: inline-block;
+  border-left: 3px solid #ddd;
+  padding-left: 5px;
+  font-style: italic;
+}
+.player-name {
+  display: block;
+}
+html,
+.section,
+.input {
+  background: #fff;
+}
+html .control.has-icon > .fa,
+.section .control.has-icon > .fa,
+.input .control.has-icon > .fa {
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  html #home,
+  .section #home,
+  .input #home {
+    max-width: 414px;
+    margin: 0 auto;
+  }
+}
+html .nav,
+.section .nav,
+.input .nav,
+html .nav-menu,
+.section .nav-menu,
+.input .nav-menu {
+  background-color: #156e93;
+}
+html .nav .nav-menu > .nav-item,
+.section .nav .nav-menu > .nav-item,
+.input .nav .nav-menu > .nav-item,
+html .nav-menu .nav-menu > .nav-item,
+.section .nav-menu .nav-menu > .nav-item,
+.input .nav-menu .nav-menu > .nav-item {
+  display: block;
+  text-align: left;
+  padding: 15px 30px !important;
+}
+html .nav a.nav-item,
+.section .nav a.nav-item,
+.input .nav a.nav-item,
+html .nav-menu a.nav-item,
+.section .nav-menu a.nav-item,
+.input .nav-menu a.nav-item {
+  color: #fff;
+}
+html .nav .nav-item,
+.section .nav .nav-item,
+.input .nav .nav-item,
+html .nav-menu .nav-item,
+.section .nav-menu .nav-item,
+.input .nav-menu .nav-item {
+  border: none;
+}
+html .nav .nav-toggle > span,
+.section .nav .nav-toggle > span,
+.input .nav .nav-toggle > span,
+html .nav-menu .nav-toggle > span,
+.section .nav-menu .nav-toggle > span,
+.input .nav-menu .nav-toggle > span {
+  background-color: #fff;
+}
+html .nav .nav-toggle:hover,
+.section .nav .nav-toggle:hover,
+.input .nav .nav-toggle:hover,
+html .nav-menu .nav-toggle:hover,
+.section .nav-menu .nav-toggle:hover,
+.input .nav-menu .nav-toggle:hover {
+  background-color: #156e93;
+}
+html .table > thead > tr > th,
+.section .table > thead > tr > th,
+.input .table > thead > tr > th {
+  color: #333;
+  border-top: 2px solid #156e93;
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+@require 'components/buttons';
+@require 'components/forms';
+
+@require 'pages/landing';
+@require 'pages/games';
+@require 'pages/view-players';
+
+$text-color = #FFF
+$nav-bg = #156e93
+//or maybe 3b303b
+
+$body-bg = #FFF
+
+html, .section, .input
+  background: $body-bg
+
+  .control.has-icon > .fa {
+    z-index: 1;
+  }
+
+  #home
+    @media(min-width: 1024px)
+      max-width: 414px
+      margin: 0 auto
+
+  .nav, .nav-menu
+    background-color: $nav-bg
+
+    .nav-menu > .nav-item
+      display: block
+      text-align: left
+      padding: 15px 30px !important
+
+    a.nav-item
+      color: $text-color
+
+    .nav-item
+      border: none
+
+    .nav-toggle > span
+      background-color: $text-color
+
+    .nav-toggle:hover
+      background-color: $nav-bg
+
+  .table > thead > tr > th
+    color: #333
+    border-top: 2px solid $nav-bg
+

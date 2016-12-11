@@ -1,0 +1,43 @@
+<nav class="nav has-shadow" ng-controller="NavController as nc">
+  <div class="container">
+    <div class="nav-left">
+      <a class="nav-item is-brand" href="#">
+        <img src="assets/img/CG-logo.png" alt="Bulma logo">
+        &nbsp Dashboard
+      </a>
+    </div>
+
+  <span class="nav-toggle" ng-click="nc.toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+    <div class="nav-right nav-menu" ng-class="{'is-active': nc.openedMenu}">
+      <a class="nav-item" ui-sref="dashboard.home" ng-click="nc.toggleMenu()">
+        Add Player
+        <span class="icon is-small is-pulled-right is-hidden-tablet">
+          <i class="fa fa-angle-right"></i>
+        </span>
+      </a>
+      <a class="nav-item" ui-sref="dashboard.games" ng-click="nc.toggleMenu()">
+        Manage Games
+        <span class="icon is-small is-pulled-right is-hidden-tablet">
+          <i class="fa fa-angle-right"></i>
+        </span>
+      </a>
+      <!--<a class="nav-item" ui-sref="dashboard.stats" ng-click="nc.toggleMenu()">-->
+        <!--View Stats-->
+        <!--<span class="icon is-small is-pulled-right is-hidden-tablet">-->
+          <!--<i class="fa fa-angle-right"></i>-->
+        <!--</span>-->
+      <!--</a>-->
+      <a class="nav-item" ui-sref="dashboard.players" ng-click="nc.toggleMenu()">
+        View Players
+        <span class="icon is-small is-pulled-right is-hidden-tablet">
+          <i class="fa fa-angle-right"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+</nav>

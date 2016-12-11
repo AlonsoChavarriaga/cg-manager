@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="title">View Players</h1>
+
+  <!--<a class="button is-primary">View Today's Players</a>-->
+
+  <p class="control has-icon" style="margin-top: 15px">
+    <input class="input small-input" placeholder="Search by Name" ng-model="search.name">
+    <i class="fa fa-search"></i>
+  </p>
+
+  <p class="control has-icon" style="margin-top: 15px">
+    <input class="input small-input" placeholder="Search by Tag" ng-model="search.tag">
+    <i class="fa fa-search"></i>
+  </p>
+  <br>
+
+  <div class="columns is-mobile is-paddingless"
+       ng-repeat="player in players.all | filter: {name: search.name, tag: search.tag}" style="border: 1px solid #d0d0d0;margin-top: 1px">
+    <div class="player-row column is-12">
+      <span class="player-name"><b>{{ player.name }}</b></span>
+
+      <span class="player-tag-style">{{ player.tag }}</span>
+      <span class="view-profile is-pulled-right">
+        <a ui-sref="dashboard.players.profile({id: player._id, player: player})">View</a>
+      </span>
+    </div>
+  </div>
+
+
+</div>
+

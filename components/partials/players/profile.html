@@ -1,0 +1,24 @@
+<div class="container">
+
+  <span class="icon back-arrow">
+    <a ui-sref="dashboard.players"><i class="fa fa-arrow-left"></i></a>
+  </span><br>
+
+  <h1 class="title">{{ profile.player.tag }}'s Profile</h1>
+
+  <span class="player-name">{{ profile.player.name }}</span>
+  <span class="player-details">Joined {{ profile.player.createdAt | date:'mediumDate'}}</span>
+
+  <table class="table is-striped is-narrow is-bordered" ng-repeat="visit in profile.visits">
+    <thead>
+      <tr>
+        <th>{{ visit.createdAt | date: 'fullDate'}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="game in visit.games">
+        <td>{{ game.title }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

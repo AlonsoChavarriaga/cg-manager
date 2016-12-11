@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="title">Manage Games</h1>
+
+  <label class="label">Add New Game</label>
+  <p class="control is-inline-block-desktop" >
+    <input class="input small-input" ng-model="game.title">
+  </p>
+
+  <a class="button is-primary is-flex-mobile"
+     ng-click="games.addGame(game)">
+    Add Game
+  </a>
+
+  <div class="game-tag-container">
+    <p class="control has-icon">
+      <input class="input small-input" placeholder="Search games" ng-model="search">
+      <i class="fa fa-search"></i>
+    </p>
+
+    <ul class="game-tags">
+      <li class="button is-primary game-tag" ng-repeat="game in games.all | filter: {title: search}">
+        {{ game.title }}
+          <span class="icon is-small" ng-click="games.deleteGame(game)">
+            <i class="fa fa-times"></i>
+          </span>
+      </li>
+    </ul>
+
+</div>
+

@@ -20,7 +20,7 @@ angular.module('app.home', ['ui.router'])
 
 }])
 
-.controller('HomeController', ['$http', '$location','$scope', function($http, $location, $scope) {
+.controller('HomeController', ['$http', '$location','$scope', '$state', function($http, $location, $scope, $state) {
   var home = this;
 
   //Initialize arrays for players, games and selected games
@@ -62,10 +62,16 @@ angular.module('app.home', ['ui.router'])
       };
 
       $http.post('api/visits', newVisit)
-        .success(function (data){
-          $scope.success = true;
-          $scope.successMsg = player.originalObject.name + " has been logged.";
-          $location.path('/dashboard');
+        .success(function (){
+          var addedPlayer = player.originalObject.name
+          $state.go($state.current, {}, {reload : true})
+              .then(function(){
+                setTimeout(function () {
+                  $scope.success = true;
+                  $scope.successMsg = addedPlayer + " has been logged.";
+                  console.log($scope.successMsg);
+                }, 5000);
+              });
         })
     } else {
       var newPlayerData = {

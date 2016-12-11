@@ -19,8 +19,13 @@ angular.module('app.players', ['ui.router'])
         })
 }])
 
-.controller('PlayersController', ['$http', '$filter', function($http, $filter) {
+.controller('PlayersController', ['$http', '$filter', '$scope', function($http, $filter, $scope) {
   var players = this;
+
+  $scope.playerFilter = false;
+
+  players.all = [];
+  players.today = [];
 
   //Get today's date in the same format
   var todaysDate = function(){
@@ -29,23 +34,24 @@ angular.module('app.players', ['ui.router'])
     return (today);
   };
 
-
-
-  players.all = [];
+  //Toggle player filter between 'all' and 'today'
+  $scope.playerToggle = function () {
+    $scope.playerFilter = !$scope.playerFilter;
+  };
 
   $http.get('api/players')
     .success(function(playerData){
 
       angular.copy(playerData, players.all);
 
-      $http.get('api/visits')
+      $http.get('api/visits?populate=player')
         .success(function(visits){
 
-          angular.forEach(visits, function(visit){
-            visit = $filter('date')(visit.createdAt, 'fullDate');
-
+          angular.forEach(visits, function(visitData){
+            var visit = $filter('date')(visitData.createdAt, 'fullDate');
             if (visit == todaysDate()){
-              console.log(visit);
+              players.today.push(visitData.player);
+              console.log(players.today);
             }
 
           });

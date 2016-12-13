@@ -68,6 +68,14 @@ html .nav-menu .nav-menu > .nav-item,
   text-align: left;
   padding: 15px 30px !important;
 }
+html .nav .nav-menu > .nav-item:hover,
+.section .nav .nav-menu > .nav-item:hover,
+.input .nav .nav-menu > .nav-item:hover,
+html .nav-menu .nav-menu > .nav-item:hover,
+.section .nav-menu .nav-menu > .nav-item:hover,
+.input .nav-menu .nav-menu > .nav-item:hover {
+  background: #187ba5;
+}
 html .nav a.nav-item,
 .section .nav a.nav-item,
 .input .nav a.nav-item,
@@ -98,11 +106,52 @@ html .nav .nav-toggle:hover,
 html .nav-menu .nav-toggle:hover,
 .section .nav-menu .nav-toggle:hover,
 .input .nav-menu .nav-toggle:hover {
-  background-color: #156e93;
+  background-color: #187ba5;
 }
 html .table > thead > tr > th,
 .section .table > thead > tr > th,
 .input .table > thead > tr > th {
   color: #333;
   border-top: 2px solid #156e93;
+}
+html .message,
+.section .message,
+.input .message {
+  position: absolute;
+  width: 100vw;
+  top: -15px;
+  left: calc(-50vw + 50%);
+}
+html .message-body,
+.section .message-body,
+.input .message-body {
+  border: none;
+  border-bottom: 1px solid #23d160;
+}
+html .fade-element-in.ng-enter,
+.section .fade-element-in.ng-enter,
+.input .fade-element-in.ng-enter {
+  transition: 0.4s linear all;
+  opacity: 0;
+}
+html .fade-element-in-init .fade-element-in.ng-enter,
+.section .fade-element-in-init .fade-element-in.ng-enter,
+.input .fade-element-in-init .fade-element-in.ng-enter {
+  opacity: 1;
+}
+html .fade-element-in.ng-enter.ng-enter-active,
+.section .fade-element-in.ng-enter.ng-enter-active,
+.input .fade-element-in.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+html .fade-element-in.ng-leave,
+.section .fade-element-in.ng-leave,
+.input .fade-element-in.ng-leave {
+  transition: 0.4s linear all;
+  opacity: 1;
+}
+html .fade-element-in.ng-leave.ng-leave-active,
+.section .fade-element-in.ng-leave.ng-leave-active,
+.input .fade-element-in.ng-leave.ng-leave-active {
+  opacity: 0;
 }

@@ -20,7 +20,7 @@ angular.module('app.home', ['ui.router'])
 
 }])
 
-.controller('HomeController', ['$http', '$location','$scope', '$state', function($http, $location, $scope, $state) {
+.controller('HomeController', ['$http', '$location','$scope', '$timeout', function($http, $location, $scope, $timeout) {
   var home = this;
 
   //Initialize arrays for players, games and selected games
@@ -31,6 +31,7 @@ angular.module('app.home', ['ui.router'])
   //Store individual player info, whether pre-existing or new
   home.player = {};
   $scope.newPlayerInfo = {};
+  $scope.successMsg = null;
 
 
   //Get all games for autocomplete
@@ -47,12 +48,13 @@ angular.module('app.home', ['ui.router'])
 
 
   home.selectGame = function($item){
+    console.log($item.originalObject);
     home.selectedGames.push($item.originalObject);
   };
 
   $scope.newPlayer = function(str) {
     $scope.newPlayerInfo.name = str;
-  }
+  };
 
   home.addPlayerVisit = function(player, games){
     if(player.originalObject.name){
@@ -63,15 +65,13 @@ angular.module('app.home', ['ui.router'])
 
       $http.post('api/visits', newVisit)
         .success(function (){
-          var addedPlayer = player.originalObject.name
-          $state.go($state.current, {}, {reload : true})
-              .then(function(){
-                setTimeout(function () {
-                  $scope.success = true;
-                  $scope.successMsg = addedPlayer + " has been logged.";
-                  console.log($scope.successMsg);
-                }, 5000);
-              });
+          var addedPlayer = player.originalObject.name;
+            $scope.$broadcast('angucomplete-alt:clearInput');
+            home.selectedGames = [];
+            $scope.successMsg = addedPlayer + " has been logged.";
+            $timeout(function(){
+              $scope.successMsg = false;
+            }, 1700);
         })
     } else {
       var newPlayerData = {
@@ -87,13 +87,14 @@ angular.module('app.home', ['ui.router'])
             };
             $http.post('api/visits', newVisit)
                 .success(function (){
-                  $scope.success = true;
+                  $scope.$broadcast('angucomplete-alt:clearInput');
+                  home.selectedGames = [];
                   $scope.successMsg = $scope.newPlayerInfo.name + " has been logged.";
-                  $location.path('/dashboard');
+                  $timeout(function(){
+                    $scope.successMsg = false;
+                  }, 1700);
                 })
           });
-
-
     }
   };
 

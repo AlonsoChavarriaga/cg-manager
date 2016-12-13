@@ -1,5 +1,20 @@
 <div id="home" class="container" ng-controller="HomeController as home">
+  <article  class="message is-success">
+    <!--ng-if="successMsg"-->
+    <!--<div class="message-header">-->
+      <!--Player Saved-->
+    <!--</div>-->
+    <div ng-if="successMsg" class="fade-element-in message-body">
+       {{ successMsg }}
+      <span class="icon is-small is-pulled-right">
+        <i class="fa fa-close" style="vertical-align: middle"></i>
+      </span>
+    </div>
+  </article>
+
   <h1 class="title">Add Player</h1>
+
+
 
 
   <form id="form-add-player">
@@ -46,14 +61,5 @@
       Save Player Entry
     </a>
   </form><br>
-
-  <article ng-if="successMsg" class="message is-success">
-    <div class="message-header">
-      Player Saved
-    </div>
-    <div class="message-body">
-      {{ successMsg }}
-    </div>
-  </article>
 
 </div>

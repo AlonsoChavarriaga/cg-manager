@@ -7,6 +7,7 @@
 angular.module('app', [
   'ui.router',
   'angucomplete-alt',
+  'ngAnimate',
   'app.index',
   'app.dashboard',
   'app.nav',

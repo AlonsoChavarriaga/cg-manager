@@ -32,6 +32,8 @@ html, .section, .input
       display: block
       text-align: left
       padding: 15px 30px !important
+      &:hover
+        background: lighten($nav-bg, 6%)
 
     a.nav-item
       color: $text-color
@@ -43,9 +45,41 @@ html, .section, .input
       background-color: $text-color
 
     .nav-toggle:hover
-      background-color: $nav-bg
+      background-color: lighten($nav-bg, 6%)
 
   .table > thead > tr > th
     color: #333
     border-top: 2px solid $nav-bg
+
+  .message
+    position: absolute
+    width: 100vw
+    top: -15px
+    left: calc(-50vw + 50%)
+
+  .message-body
+    border: none;
+    border-bottom: 1px solid #23d160
+
+  .fade-element-in.ng-enter {
+    transition: 0.4s linear all;
+    opacity: 0;
+  }
+
+  .fade-element-in-init .fade-element-in.ng-enter {
+    opacity: 1;
+  }
+
+  .fade-element-in.ng-enter.ng-enter-active {
+    opacity: 1;
+  }
+
+  .fade-element-in.ng-leave {
+    transition: 0.4s linear all;
+    opacity: 1;
+  }
+  .fade-element-in.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+
 

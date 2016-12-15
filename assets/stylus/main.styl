@@ -1,14 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 
-@require 'components/buttons';
-@require 'components/forms';
-
-@require 'pages/landing';
-@require 'pages/games';
-@require 'pages/view-players';
 
 $text-color = #FFF
-$nav-bg = #156e93
+$nav-bg = #333
+$primary = #156e93
 //or maybe 3b303b
 
 $body-bg = #FFF
@@ -49,7 +44,7 @@ html, .section, .input
 
   .table > thead > tr > th
     color: #333
-    border-top: 2px solid $nav-bg
+    border-top: 2px solid $primary
 
   .message
     position: absolute
@@ -82,4 +77,11 @@ html, .section, .input
     opacity: 0;
   }
 
+
+@require 'components/buttons';
+@require 'components/forms';
+
+@require 'pages/landing';
+@require 'pages/games';
+@require 'pages/view-players';
 

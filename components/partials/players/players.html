@@ -20,7 +20,7 @@
   <span ng-if="playerFilter && !players.today[0]">There are no players logged yet for today.</span>
 
   <div ng-if="playerFilter" class="columns is-mobile is-paddingless"
-       ng-repeat="player in players.today | filter: {name: search.name, tag: search.tag}" style="border: 1px solid #d0d0d0;margin-top: 1px">
+       ng-repeat="player in players.today | filter: {name: search.name, tag: search.tag}">
     <div class="player-row column is-12">
       <span class="player-name"><b>{{ player.name }}</b></span>
 
@@ -32,7 +32,7 @@
   </div>
 
   <div ng-if="!playerFilter" class="columns is-mobile is-paddingless"
-       ng-repeat="player in players.all | filter: {name: search.name, tag: search.tag}" style="border: 1px solid #d0d0d0;margin-top: 1px">
+       ng-repeat="player in players.all | filter: {name: search.name, tag: search.tag}">
     <div class="player-row column is-12">
       <span class="player-name"><b>{{ player.name }}</b></span>
 
@@ -42,6 +42,7 @@
       </span>
     </div>
   </div>
+
 
 
 </div>

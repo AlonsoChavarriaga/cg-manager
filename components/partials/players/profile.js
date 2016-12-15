@@ -30,10 +30,11 @@ angular.module('app.profile', ['ui.router'])
   $http.get('api/visits?player=' + profile.player._id + '&populate=games')
       .success(function(data){
         angular.copy(data, profile.visits);
+        
+        //Last visited
+        profile.lastVisit = profile.visits[profile.visits.length - 1].createdAt;
+
+        //Total visits
+        profile.totalVisits = profile.visits.length
       });
-
-
-
-  //Sample URL to get all visits for one player, with games populated
-  // /api/visits?player._id=582f69617a544f028c8dee63?&populate=games
 }]);

@@ -1,24 +1,84 @@
-<div class="outer-wrap">
-	<div class="index_nav">
-		<div class="content-wrap">
-			<ul>
-			  <li class="nav_link" >
-				<a ui-sref="index">Home</a>
-				</li>
-			  <li class="nav_link">
-				<a ui-sref="dashboard">Dashboard</a>
-				</li>
-			  <li class="nav_link" style="float: right">
-				<a ui-sref="index" class="btn-link"><button class="sec-btn" type="button">Sign Up</button></a>
-				</li>
-			  <li class="nav_link" style="float: right">
-				<a ui-sref="dashboard" class="btn-link"><button class="pri-btn" type="button">Log In</button></a>
-				</li>
-			</ul>
+<!--<div class="index_nav">-->
+	<!--<div class="container">-->
+		<!--<ul>-->
+			<!--<li class="nav_link" >-->
+			<!--<a ui-sref="index">Home</a>-->
+			<!--</li>-->
+			<!--<li class="nav_link">-->
+			<!--<a ui-sref="dashboard">Dashboard</a>-->
+			<!--</li>-->
+			<!--<li class="nav_link" style="float: right">-->
+			<!--<a ui-sref="index" class="btn-link"><button class="sec-btn" type="button">Sign Up</button></a>-->
+			<!--</li>-->
+			<!--<li class="nav_link" style="float: right">-->
+			<!--<a ui-sref="dashboard" class="btn-link"><button class="pri-btn" type="button">Log In</button></a>-->
+			<!--</li>-->
+		<!--</ul>-->
+	<!--</div>-->
+<!--</div>-->
+<section id="landing" class="hero is-primary is-fullheight has-text-centered"
+				 ng-controller="LandingPage">
+	<div class="hero-body">
+		<div class="container">
+
+			<h1 class="title">
+				CG Dashboard
+			</h1>
+
+			<div class="card">
+				<div class="tabs is-fullwidth is-boxed">
+					<ul>
+						<li ng-class="{'is-active': tabActive == 'signup'}">
+							<a ng-click="tabSwitch('signup')">
+								<span>Sign Up</span>
+							</a>
+						</li>
+						<li ng-class="{'is-active': tabActive == 'login'}">
+							<a ng-click="tabSwitch('login')">
+								<span>Login</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="card-content">
+
+					<div ng-if="tabActive == 'signup'" class="form-container">
+						<p class="control">
+							<input class="input" type="text" placeholder="Email">
+						</p>
+						<p class="control">
+							<input class="input" type="text" placeholder="Password">
+						</p>
+						<a class="button is-primary is-fullwidth">
+							Create New Account
+						</a>
+						<hr>
+						<span>or sign up with Google+</span>
+						<a class="button google-btn is-fullwidth">
+						<span class="icon is-pulled-left">
+							<i class="fa fa-google-plus"></i>
+						</span>
+							<span>Sign in with Google</span>
+						</a>
+					</div>
+
+					<div ng-if="tabActive == 'login'" class="form-container">
+						<p class="control">
+							<input class="input" type="text" placeholder="Email">
+						</p>
+						<p class="control">
+							<input class="input" type="text" placeholder="Password">
+						</p>
+						<a class="button is-primary is-fullwidth">
+							Create New Account
+						</a>
+					</div>
+					
+				</div>
+			</div>
+
 		</div>
 	</div>
-	<div class="content-wrap">
-		<h1>Game Log</h1>
-		<h2>Nothin' but the landing page here. Only link should be to login or register</h2>
-	</div>
-</div>
+</section>
+
+

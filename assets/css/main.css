@@ -128,6 +128,30 @@ html .fade-element-in.ng-leave.ng-leave-active,
 .small-input {
   max-width: 414px !important;
 }
+#landing .card {
+  margin: 0 auto;
+  min-height: 314px;
+}
+#landing .card ul li {
+  background: #f0f0f0;
+}
+#landing .tabs a {
+  color: #000;
+}
+#landing .tabs a:hover {
+  color: #000;
+}
+#landing .google-btn {
+  margin-top: 10px;
+  background: #dd4b39;
+  color: #fff;
+}
+#landing .google-btn .icon {
+  margin-right: 20px;
+}
+#landing .is-active {
+  background: #fff;
+}
 .game-tag-container {
   margin-top: 20px;
 }

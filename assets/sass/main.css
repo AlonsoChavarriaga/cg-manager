@@ -2675,7 +2675,7 @@ a.panel-block:hover {
       color: #156e93; }
   .tabs ul {
     align-items: center;
-    border-bottom: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb !important;
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;
@@ -2700,28 +2700,28 @@ a.panel-block:hover {
     justify-content: flex-end; }
   .tabs.is-boxed a {
     border: 1px solid transparent;
-    border-radius: 3px 3px 0 0;
+    /*border-radius: 3px 3px 0 0;*/
     padding-bottom: 5px;
     padding-top: 5px; }
     .tabs.is-boxed a:hover {
       background-color: whitesmoke;
-      border-bottom-color: #dbdbdb; }
+      border-bottom-color: #dbdbdb !important; }
   .tabs.is-boxed li.is-active a {
     background-color: white;
-    border-color: #dbdbdb;
+    border-color: #dbdbdb !important;
     border-bottom-color: transparent !important; }
   .tabs.is-fullwidth li {
     flex-grow: 1;
     flex-shrink: 0; }
   .tabs.is-toggle a {
-    border: 1px solid #dbdbdb;
+    border: 1px solid #dbdbdb !important;
     margin-bottom: 0;
     padding-bottom: 5px;
     padding-top: 5px;
     position: relative; }
     .tabs.is-toggle a:hover {
       background-color: whitesmoke;
-      border-color: #b5b5b5;
+      border-color: #b5b5b5 !important;
       z-index: 2; }
   .tabs.is-toggle li + li {
     margin-left: -1px; }
@@ -2731,7 +2731,7 @@ a.panel-block:hover {
     border-radius: 0 3px 3px 0; }
   .tabs.is-toggle li.is-active a {
     background-color: #156e93;
-    border-color: #156e93;
+    border-color: #156e93 !important;
     color: white;
     z-index: 1; }
   .tabs.is-toggle ul {

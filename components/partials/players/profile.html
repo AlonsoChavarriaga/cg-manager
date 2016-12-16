@@ -4,12 +4,14 @@
     <a ui-sref="dashboard.players"><i class="fa fa-arrow-left"></i></a>
   </span><br>
 
-  <h1 class="title">{{ profile.player.tag }}'s Profile</h1>
+  <div class="player-details-container">
+    <h1 class="title">{{ profile.player.tag }}'s Profile</h1>
 
-  <span class="player-name">{{ profile.player.name }}</span>
-  <span class="player-details">Joined {{ profile.player.createdAt | date:'mediumDate' }}</span>
-  <span class="player-details">Last Visited: {{ profile.lastVisit | date: 'mediumDate' }}</span>
-  <span class="player-details">Total Visits: {{ profile.totalVisits }}</span>
+    <span class="player-name">{{ profile.player.name }}</span>
+    <span class="player-details">Joined {{ profile.player.createdAt | date:'mediumDate' }}</span>
+    <span class="player-details">Last Visited: {{ profile.lastVisit | date: 'mediumDate' }}</span>
+    <span class="player-details">Total Visits: {{ profile.totalVisits }}</span>
+  </div>
 
   <table class="table is-striped is-narrow is-bordered" ng-repeat="visit in profile.visits">
     <thead>

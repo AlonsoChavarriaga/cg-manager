@@ -130,10 +130,14 @@ html .fade-element-in.ng-leave.ng-leave-active,
 }
 #landing .card {
   margin: 0 auto;
-  min-height: 314px;
+  min-height: 320px;
 }
 #landing .card ul li {
   background: #f0f0f0;
+}
+#landing .card .title,
+#landing .card .subtitle {
+  color: #555;
 }
 #landing .tabs a {
   color: #000;

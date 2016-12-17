@@ -43,37 +43,41 @@
 				<div class="card-content">
 
 					<div ng-if="tabActive == 'signup'" class="form-container">
-						<p class="control">
-							<input class="input" type="text" placeholder="Email">
-						</p>
-						<p class="control">
-							<input class="input" type="text" placeholder="Password">
-						</p>
-						<a class="button is-primary is-fullwidth">
-							Create New Account
-						</a>
-						<hr>
-						<span>or sign up with Google+</span>
-						<a class="button google-btn is-fullwidth">
+						<form action="/" method="post">
+							<p class="control">
+								<input class="input" type="text" placeholder="Email" name="email">
+							</p>
+							<p class="control">
+								<input class="input" type="text" placeholder="Password" name="password">
+							</p>
+							<button class="button is-primary is-fullwidth" type="submit">
+								Create New Account
+							</button>
+							<hr>
+							<span>or sign up with Google+</span>
+							<a class="button google-btn is-fullwidth">
 						<span class="icon is-pulled-left">
 							<i class="fa fa-google-plus"></i>
 						</span>
-							<span>Sign in with Google</span>
-						</a>
+								<span>Sign in with Google</span>
+							</a>
+						</form>
 					</div>
 
 					<div ng-if="tabActive == 'login'" class="form-container">
 						<h1 class="title is-4">Already have an account?</h1>
-						<p class="control">
-							<input class="input" type="text" placeholder="Email">
-						</p>
-						<p class="control">
-							<input class="input" type="text" placeholder="Password">
-						</p>
-						<a class="button is-primary is-fullwidth">
-							Log In
-						</a><br>
-						<a class="forgot-password">Forgot your password?</a>
+						<form action="/login" method="post">
+							<p class="control">
+								<input class="input" type="text" placeholder="Email" name="email">
+							</p>
+							<p class="control">
+								<input class="input" type="text" placeholder="Password" name="password">
+							</p>
+							<button type="submit" class="button is-primary is-fullwidth">
+								Log In
+							</button><br>
+							<a class="forgot-password">Forgot your password?</a>
+						</form>
 					</div>
 
 				</div>
